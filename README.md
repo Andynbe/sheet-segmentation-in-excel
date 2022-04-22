@@ -10,15 +10,17 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  编译器为VScode，原则上没有要求  
+2.  安装Python3.8以上
+3.  新建终端，输入pip install xlwings，安装python控制excel软件xlwings，详情请参考https://docs.xlwings.org/zh_CN/latest/installation.html
+4.  安装完成
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  将需要处理的Excel放入/data文件夹
+2.  打开test_copy.py程序，点击F5运行Python终端
+3.  根据提示选择需要遍历的sheet
+4.  等待结果
 
 #### 参与贡献
 
