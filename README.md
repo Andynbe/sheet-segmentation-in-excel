@@ -18,7 +18,7 @@
 #### 使用说明
 
 1.  将需要处理的Excel放入/data文件夹
-2.  打开test_copy.py程序，点击F5运行Python终端
+2.  打开mian_v1.5.py程序，点击F5运行Python终端
 3.  根据提示选择需要遍历的sheet
 4.  等待结果
 

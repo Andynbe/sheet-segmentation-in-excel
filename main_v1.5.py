@@ -55,7 +55,7 @@ for excel_count in range(0,len(excel_list)):
 
         # 获取活动的工作表
         sheet_list=[]
-        for i in range (0,len(sheet_name_name)):
+        for i in range (0,len(sheet_name_name)-1):
                 sheet_list.append(wb1.sheets[i])
         #print(sheet_list)
 
