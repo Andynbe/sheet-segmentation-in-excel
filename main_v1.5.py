@@ -47,7 +47,7 @@ data_matrix=[]
 #############################################################################
 for excel_count in range(0,len(excel_list)):
         print('当前进度%sin%s'%(excel_count+1,len(excel_list)+1))
-        wb1 = app.books.open('C:/Users/andyy/Desktop/project1/data'+'/'+excel_list[excel_count])
+        wb1 = app.books.open(r'%s/data'%(path)+'/'+excel_list[excel_count])
         # Excel工作簿显示警告,不显示
         app.display_alerts = False
         # 工作簿屏幕更新,不更新
@@ -90,4 +90,5 @@ for excel_count in range(0,len(excel_list)):
         wb1.close
 
 wb2.save('%s.xlsx'%(sheet1.name))
+wb2.close
 app.quit()
