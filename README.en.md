@@ -1,37 +1,84 @@
-# Excel中sheet分割
+# Excel Sheet Segmentation and Consolidation Tool
 
-#### Description
-基于xlwings的python小程序，能够将大量的excel进行sheet分割个汇总
-来自于家中作为审计的女领导要求，还在完善中...
+#### Project Overview
+An automation tool based on xlwings library, providing following core features:
+- Batch processing Excel files in specified directory
+- Intelligent worksheet structure recognition
+- Merge data by specified sheet index
+- Automatic source file identification
+- Generate timestamped consolidated files
 
-#### Software Architecture
-Software architecture description
+#### System Architecture
+- Core library: xlwings 0.30.12+
+- Language: Python 3.8+
+- Dependency management: pip
+- Directory structure:
+  ```
+  ├── data/         # Raw data storage
+  ├── output/       # Result output 
+  ├── main_v1.5.py  # Main program
+  └── utils.py      # Path handling utilities
+  ```
 
-#### Installation
+#### Installation Guide
+1. Requirements
+   - Windows 10/11
+   - Microsoft Office 2016+
+   - Python 3.8+
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+2. Dependency Installation
+   ```powershell
+   pip install xlwings==0.30.12
+   pip install pywin32==306
+   ```
 
-#### Instructions
+3. Configuration
+   - Create data folder in project root for input files
+   - Ensure all Excel files are in xlsx format
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### User Manual
+1. File Preparation
+   - Place Excel files in data directory
+   - Maintain consistent column structure across files
 
-#### Contribution
+2. Execution
+   ```powershell
+   python main_v1.5.py
+   ```
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+3. Workflow
+   - Program displays detected worksheet list
+   - Input target sheet index (numeric)
+   - Wait for completion notification (~1 file/sec)
+   - Result file generated in project root
 
+4. Output Example
+   ```
+   Accounts_Payable_Summary_20240318.xlsx
+   └── Sheet1
+       ├── A1:H100  Source data
+       └── Column I Source file tags
+   ```
 
-#### Gitee Feature
+#### Important Notes
+1. File Specifications
+   - Single file recommended <500k rows
+   - Total rows after merging < Excel limit (1,048,576 rows)
+   - Use English filenames recommended
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+2. Troubleshooting
+   - Check following if program interrupts:
+     - Excel files not being used by other programs
+     - Correct sheet index input
+     - data directory exists and not empty
+
+3. Performance Optimization
+   - Close other Excel instances when processing large files
+   - Contact developer for enterprise version for big data processing
+
+#### Version History
+v1.5 Updates:
+- Added progress indicators
+- Optimized path handling
+- Fixed multi-sheet recognition issues
+- Enhanced input validation
